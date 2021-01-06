@@ -9,6 +9,7 @@ function validateBearer(req, res, next) {
   if (!authToken || authToken.split(' ')[1] !== API_TOKEN) {
     return res.status(401).json({ error: 'Unauthorized request' });
   }
+
   next();
 }
 
